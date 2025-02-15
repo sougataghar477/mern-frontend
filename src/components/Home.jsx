@@ -4,7 +4,7 @@ export default function Home() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                let response=await fetch("/api", {
+                let response=await fetch("https://mern-backend-sooty-tau.vercel.app/api", {
                     method: "GET",
                     credentials: "include", // ✅ REQUIRED for cookies
                   })
