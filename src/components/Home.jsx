@@ -4,10 +4,13 @@ export default function Home() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("https://mern-backend-sooty-tau.vercel.app/api", {
+                let response=await fetch("/api", {
                     method: "GET",
-                    credentials: "include" // ✅ Allows cookies to be sent & received
-                  });
+                    credentials: "include", // ✅ REQUIRED for cookies
+                  })
+                    .then((res) => res.json())
+                    .then((data) => console.log(data))
+                    .catch((err) => console.error("Fetch error:", err));
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
