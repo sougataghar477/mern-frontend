@@ -4,7 +4,10 @@ export default function Home() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("/api");
+                const response = await fetch("/api", {
+                    method: "GET",
+                    credentials: "include" // ✅ Allows cookies to be sent & received
+                  });
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
