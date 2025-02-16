@@ -4,26 +4,29 @@ export default function Home() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                let response=await fetch("https://mern-backend-sooty-tau.vercel.app/api", {
+                const response = await fetch("https://mern-backend-sooty-tau.vercel.app/api", {
                     method: "POST",
                     credentials: "include", // ✅ REQUIRED for cookies
-                    body:JSON.stringify({msg:'hello'})
-                })
-                    .then((res) => res.json())
-                    .then((data) => console.log(data))
-                    .catch((err) => console.error("Fetch error:", err));
+                    headers: {
+                        "Content-Type": "application/json", // ✅ REQUIRED for JSON body
+                    },
+                    body: JSON.stringify({ msg: "hello" }),
+                });
+    
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
+    
                 const data = await response.json();
                 console.log(data);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
         };
-
+    
         fetchData();
     }, []);
+    
 
     return (
         <div>
