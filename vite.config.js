@@ -7,7 +7,7 @@ export default defineConfig({
   server:{
     proxy:{
       '/api': {
-        target: 'https://mern-backend-sooty-tau.vercel.app/api',
+        target: 'https://mern-backend-vucq.vercel.app/api',
       },
     }
   }
