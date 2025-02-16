@@ -5,12 +5,8 @@ export default function Home() {
         const fetchData = async () => {
             try {
                 const response = await fetch("https://mern-backend-sooty-tau.vercel.app/api", {
-                    method: "POST",
+                    method: "GET",
                     credentials: "include", // ✅ REQUIRED for cookies
-                    headers: {
-                        "Content-Type": "application/json", // ✅ REQUIRED for JSON body
-                    },
-                    body: JSON.stringify({ msg: "helloo" }),
                 });
     
                 if (!response.ok) {
