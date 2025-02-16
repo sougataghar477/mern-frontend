@@ -7,7 +7,8 @@ export default function Home() {
                 let response=await fetch("https://mern-backend-sooty-tau.vercel.app/api", {
                     method: "POST",
                     credentials: "include", // ✅ REQUIRED for cookies
-                  })
+                    body:JSON.stringify({msg:'hello'})
+                })
                     .then((res) => res.json())
                     .then((data) => console.log(data))
                     .catch((err) => console.error("Fetch error:", err));
