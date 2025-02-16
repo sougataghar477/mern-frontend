@@ -10,7 +10,7 @@ export default function Home() {
                     headers: {
                         "Content-Type": "application/json", // ✅ REQUIRED for JSON body
                     },
-                    body: JSON.stringify({ msg: "hello" }),
+                    body: JSON.stringify({ msg: "helloo" }),
                 });
     
                 if (!response.ok) {
